@@ -4,7 +4,15 @@ import Task from "./Task";
 export default {
   title: "Task",
   // Our exports that end in "Data" are not stories.
-  excludeStories: /.*Data$/
+  excludeStories: /.*Data$/,
+  argTypes: {
+    state: {
+        control: {
+          type: 'inline-radio',
+          options: ['Task_INBOX', 'TASK_PINNED', 'TASK_ARCHIVED'],
+        },
+    },
+  },
 };
 export const actionsData = {
   onPinTask: action("onPinTask"),

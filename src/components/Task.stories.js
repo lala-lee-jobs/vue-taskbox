@@ -12,6 +12,7 @@ export default {
           options: ['Task_INBOX', 'TASK_PINNED', 'TASK_ARCHIVED'],
         },
     },
+    updated_at: { control: 'date'}
   },
 };
 export const actionsData = {

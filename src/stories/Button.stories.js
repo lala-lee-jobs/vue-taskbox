@@ -7,6 +7,9 @@ export default {
     backgroundColor: { control: 'color' },
     size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
   },
+  parameters: {
+    jest: ['button.spec.js'],
+  },
 };
 
 const Template = (args, { argTypes }) => ({

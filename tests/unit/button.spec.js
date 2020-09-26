@@ -11,4 +11,13 @@ describe("Button.vue", () => {
     expect(wrapper.text()).toBe('Test Button');
   });
 
+  it("Renders the button in the primary state", () => {
+    const label = "Button";
+    const primary = true;
+    const wrapper = shallowMount(Button, {
+      propsData: { label, primary }
+    });
+    expect(wrapper.classes('storybook-button--primary')).toBe(true)
+  });
+
 });

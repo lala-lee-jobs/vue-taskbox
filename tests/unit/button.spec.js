@@ -3,6 +3,15 @@ import Button from '@/stories/Button.vue';
 
 describe("Button.vue", () => {
 
+  const factory = (propsData, label = 'Button') => {
+    return shallowMount(Button, {
+      propsData: {
+        label,
+        ...propsData
+      }
+    })
+  }
+
   it("Renders button text using a label prop", () => {
     const label = "Test Button";
     const wrapper = shallowMount(Button, {
@@ -12,12 +21,13 @@ describe("Button.vue", () => {
   });
 
   it("Renders the button in the primary state", () => {
-    const label = "Button";
-    const primary = true;
-    const wrapper = shallowMount(Button, {
-      propsData: { label, primary }
-    });
+    const wrapper = factory({primary: true});
     expect(wrapper.classes('storybook-button--primary')).toBe(true)
+  });
+
+  it("Renders the button in the secondary state", () => {
+    const wrapper = factory({primary: false});
+    expect(wrapper.classes('storybook-button--secondary')).toBe(true)
   });
 
 });

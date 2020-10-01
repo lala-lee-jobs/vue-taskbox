@@ -25,6 +25,9 @@ export const store = new Vuex.Store({
 export default {
   title: 'PureInboxScreen',
   excludeStories: /.*store$/,
+  parameters: {
+    jest: ['InboxScreen.spec.js'],
+  },
 };
 export const Default = () => ({
   components: { PureInboxScreen },

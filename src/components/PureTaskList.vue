@@ -1,4 +1,4 @@
-<!--src/components/TaskList.vue-->
+<!--src/components/PureTaskList.vue-->
 <template>
   <div>
     <div v-if="loading">
@@ -21,8 +21,8 @@
         v-for="(task, index) in tasksInOrder"
         :key="index"
         :task="task"
-        @archiveTask="$emit('archive-task', $event)"
-        @pinTask="$emit('pin-task', $event)"
+        @archive-task="$emit('archive-task', $event)"
+        @pin-task="$emit('pin-task', $event)"
       />
     </div>
   </div>
